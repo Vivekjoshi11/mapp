@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'home.dart';
+
 class log_in extends StatefulWidget {
+  const log_in({super.key});
+
   @override
   // ignore: library_private_types_in_public_api
   _LoginPageState createState() => _LoginPageState();
@@ -16,7 +20,10 @@ class _LoginPageState extends State<log_in> {
     // Replace with your authentication logic (e.g., API call)
     if (_usernameController.text.isNotEmpty && _passwordController.text.isNotEmpty) {
       // Simulate successful login
-      Navigator.pushReplacementNamed(context, '/home'); // Replace with your home screen route
+       Navigator.push(
+  context,
+  MaterialPageRoute(builder: (context) => const HomePage()),
+); // Replace with your home screen route
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
